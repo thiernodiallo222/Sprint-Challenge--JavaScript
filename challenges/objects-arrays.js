@@ -81,7 +81,28 @@ const graduates = [
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array. This will be an array of strings.
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
+
+
 const universities = [];
+
+for (let i = 0; i < graduates.length; i++){
+  universities[i] = graduates[i].university;
+}
+// creating a swap function 
+function swap(a, b) {
+  let temp = null;
+  if (a < b) 
+    temp = a;
+    a = b;
+    b = temp;
+  }
+
+  for (let i = 0; i < graduates.length -1; i++){
+  if (graduates[i] < graduates[i + 1]) {
+    swap(graduates[i], graduates[i + 1]);
+}
+}
+
 console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. This will be an array of strings.
@@ -91,10 +112,23 @@ The resulting contact information strings should have a space between the first 
 
 Log the result of your new array. */
 const contactInfo = [];
+
+for (let i = 0; i < graduates.length; i++){
+  contactInfo[i] = `${graduates[i].first_name} ${graduates[i].email}`
+}
+
 console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 const unisWithUni = [];
+let k = 0;
+
+for (let i = 0; i < graduates.length; i++){
+  if (graduates[i].indexOf(0) === 'U' && graduates[i].indexOf(1) === 'n' && graduates[i].indexOf(2) === 'i') {
+    unisWithUni[++k] = graduates[i];
+  }
+}
+
 console.log(unisWithUni);
 
 
