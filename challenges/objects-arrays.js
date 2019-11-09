@@ -154,10 +154,16 @@ const zooAnimals = [
 The zoos want to display both the scientific name and the animal name in front of the habitats. Populate the displayNames array with only the animal_name and scientific_name of each animal. displayNames will be an array of strings, and each string should follow this pattern: "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-const displayNames = [];
-forEach(element){
-  
+
+function print(item) {
+  console.log(`Name: ${item.animal_name},  Scientific: ${item.scientific_name}`);
 }
+
+const displayNames = [];
+function findNames(item) {
+ return displayNames.forEach(item); 
+}
+
 console.log(displayNames);
 
 /* Request 2: .map()
@@ -165,8 +171,12 @@ console.log(displayNames);
 The zoos need a list of all their animal's names (animal_name only) converted to lower case. Using map, create a new array of strings named lowCaseAnimalNames, each string following this pattern: "jackal, asiatic". Log the resut.
 
 */
-function lowCase() {
-  return 
+
+function toLower(element) {
+  return element.toLowerCase();
+}
+function lowCase(zooAnimals) {
+  return zooAnimals.map(lowCase);
 }
 const lowCaseAnimalNames = [];
 console.log(lowCaseAnimalNames);
@@ -177,6 +187,14 @@ The zoos are concerned about animals with a lower population count. Using filter
 
 */
 const lowPopulationAnimals = [];
+
+function lowpop(animal) {
+  if (animal.population < 5)
+    return animal;
+}
+function fiterLessThanFive() {
+  return zooAnimals.filter(lowpop);
+}
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -184,13 +202,23 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
+
+function sum(accum, item) {
+  return (accum + item.donation);
+}
+
+function tallyUpDonations(runners) {
+  return zooAnimals.reduce(sum, 0);
+}
+
+// f
 const populationTotal = 0;
 console.log(populationTotal);
+
 
 
 /*
 
 Stretch: If you haven't already, convert your array method callbacks into arrow functions.
 
-*/
-
+*
