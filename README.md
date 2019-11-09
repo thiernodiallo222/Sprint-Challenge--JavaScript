@@ -30,13 +30,26 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+forEach and map are both higher order functions meaning that they can take other functions as argument, called callback functions. The biggest difference is that forEach functions take callback to doesn't return a thing, while the map function take only callbacks that return something.
+
 2. What is the difference between a function and a method?
+
+A function is a group of code that is independently defined and serving for a specific purpose, while a method is a function created within a method.
 
 3. What is closure?
 
+A closure is a functiion that have access to the parent scope even after the parent function is closed.
+
 4. Describe the four rules of the 'this' keyword.
 
+ This can be used as a global scope. When it is invoked outside of any scope, it is a global scop, called global binding, and in that case, it refers to the window object
+ When it is invocked within the scope of an object, it refers to that object, and it is then called implicit binding.
+ When calling the constructor, to create a new object out of it, the this new key word is also invoked and that invoks the this keyword.
+ Lastly, the this key word is invoked in a subclass in the .call methode designed to bin it to the subclass to allow the subclass to inherit all the properties of the superclass and of itself.
+
 5. Why do we need super() in an extended class?
+
+The super() key word, in a sub-class allows us to import all the properties of the parent class to the sub-class so they can be inherited without being declared again.
 
 ## Project Set up
 
@@ -87,4 +100,3 @@ In your solutions, it is essential that you follow best practices and produce cl
 There are a few stretch problems found throughout the files, don't work on them until you are finished with MVP requirements!
  
  ## Thierno Diallo
- 
